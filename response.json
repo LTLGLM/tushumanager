@@ -1,0 +1,148 @@
+{
+    "code": 200,
+    "data": {
+        "adminId": 1,
+        "username": "admin",
+        "password": "$2a$10$5ZdYTW586VKuETrR7b8mHOfL.5ujK1W8XaCvkiSmpa0EjzdUYs3jm",
+        "lastLoginIp": "127.0.0.1",
+        "lastLoginTime": "2024-10-17T15:27:04.320+00:00",
+        "avatar": "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+        "createTime": "2018-01-31T16:00:00.000+00:00",
+        "updateTime": "2024-08-11T08:40:22.000+00:00",
+        "deleted": "0",
+        "btnList": [
+            "usermanager:vipuser:list",
+            "usermanager:vipuser:add"
+        ],
+        "roleList": [
+            {
+                "roleId": 1,
+                "roleName": "超级管理员",
+                "roleKey": "admin",
+                "roleStatus": "0",
+                "delFlag": 0,
+                "createBy": 1,
+                "createTime": "2024-09-12T12:55:39.000+00:00",
+                "updateBy": null,
+                "updateTime": null,
+                "remark": "超级管理员"
+            }
+        ],
+        "routerList": [
+            {
+                "path": "/usermanager",
+                "component": null,
+                "name": "usermanager",
+                "meta": {
+                    "icon": "#",
+                    "title": "用户管理"
+                },
+                "children": [
+                    {
+                        "path": "/usermanager/vipuser",
+                        "component": "/usermanager/vipuser",
+                        "name": "vipuser",
+                        "meta": {
+                            "icon": "#",
+                            "title": "会员管理"
+                        },
+                        "children": null
+                    },
+                    {
+                        "path": "/usermanager/address",
+                        "component": "/usermanager/address",
+                        "name": "address",
+                        "meta": {
+                            "icon": "#",
+                            "title": "收货地址"
+                        },
+                        "children": null
+                    },
+                    {
+                        "path": "/usermanager/collect",
+                        "component": "/usermanager/collect",
+                        "name": "collect",
+                        "meta": {
+                            "icon": "#",
+                            "title": "会员收藏"
+                        },
+                        "children": null
+                    },
+                    {
+                        "path": "/usermanager/footmark",
+                        "component": "/usermanager/footmark",
+                        "name": "footmark",
+                        "meta": {
+                            "icon": "#",
+                            "title": "会员足迹"
+                        },
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "path": "/systemmanager",
+                "component": null,
+                "name": "systemmanager",
+                "meta": {
+                    "icon": "#",
+                    "title": "系统管理"
+                },
+                "children": [
+                    {
+                        "path": "/systemmanager/user",
+                        "component": "/systemmanager/user",
+                        "name": "user",
+                        "meta": {
+                            "icon": "#",
+                            "title": "用户管理"
+                        },
+                        "children": null
+                    },
+                    {
+                        "path": "/systemmanager/notice",
+                        "component": "/systemmanager/notice",
+                        "name": "notice",
+                        "meta": {
+                            "icon": "#",
+                            "title": "通知管理"
+                        },
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "path": "/goodmanager",
+                "component": null,
+                "name": "goodmanager",
+                "meta": {
+                    "icon": "#",
+                    "title": "物品管理"
+                },
+                "children": [
+                    {
+                        "path": "/goodmanager/goods",
+                        "component": "/goodmanager/goods",
+                        "name": "goods",
+                        "meta": {
+                            "icon": "#",
+                            "title": "商品管理"
+                        },
+                        "children": null
+                    },
+                    {
+                        "path": "/goodmanager/category",
+                        "component": "/goodmanager/category",
+                        "name": "category",
+                        "meta": {
+                            "icon": "#",
+                            "title": "分类管理"
+                        },
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    },
+    "message": "操作成功"
+}

@@ -1,17 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import user from "@/store/modules/user"
+import cate from "@/store/modules/cate"
+import getters from "@/store/getters"
+import websocket from "@/store/modules/websocket"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+  getters,
   modules: {
+    user,
+    cate,
+    websocket
   }
 })

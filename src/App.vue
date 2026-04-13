@@ -1,32 +1,67 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style>
+<script>
+import { MessageBox } from "element-ui";
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  created() {
+    if (!this.websocketClient) {
+      this.initWebSocketClient("websocket");
+    }
+    this.listenRolePermissionChange();
+    
+  },
+  computed: {
+    ...mapGetters(["websocketClient"]),
+  },
+  methods: {
+    ...mapActions(["initWebSocketClient"]),
+    // 监听角色权限修改事件
+    listenRolePermissionChange() {
+      this.websocketClient.on("menuNoticeMessage", (data) => {
+        MessageBox.confirm(data.message, {
+          confirmButtonText: "刷新页面",
+          cancelButtonText: "取消",
+          type: "warning",
+        })
+          .then((result) => {
+            if (result) {
+              window.location.reload();
+            }
+          })
+          .catch((err) => {});
+      });
+    },
+  },
+};
+</script>
+
+<style scoped lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100vh;
+  width: 100vw;
 }
-
-nav {
-  padding: 30px;
+</style>
+<style lang="scss">
+.el-card {
+  .el-form-item {
+    display: flex;
+    margin-right: 20px;
+  }
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.el-dialog {
+  min-width: 600px;
+  .el-form {
+    .el-form-item {
+      .el-input {
+        width: 50%;
+      }
+    }
+  }
 }
 </style>
